@@ -8,9 +8,8 @@ public class RomanNumbersTest {
 
 	@Test
 	public void testToRomanTooHight() {
-		assertThatExceptionOfType(NumberTooHighException.class)
-			.isThrownBy(() -> RomanNumbers.toRoman(4000))
-			.withMessageContaining("too high");
+		assertThatExceptionOfType(InputException.class)
+			.isThrownBy(() -> RomanNumbers.toRoman(4000));
 	}
 	
 	@Test

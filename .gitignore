@@ -1,12 +1,2 @@
-.project
-.classpath
 
-*.class
-*.jar
-*.iml
-
-.idea/
-.settings/
-
-target/
-classes/
+/target/
