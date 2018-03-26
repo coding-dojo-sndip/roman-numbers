@@ -26,12 +26,12 @@ public class RomanNumbers {
 		return romans;
 	}
 	
-	public static String toRoman(int integer) {
-		if(integer <= 0 || integer >= 4000) {
-			throw new InputException(integer);
+	public static String toRoman(int number) {
+		if(number <= 0 || number >= 4000) {
+			throw new InputException(number);
 		}
 		String romanNumber = "";
-		int remainder = integer;
+		int remainder = number;
 		for (Entry<String, Integer> entry : romanToNumber.entrySet()) {
 			Integer value = entry.getValue();
 			while(remainder >= entry.getValue()) {
@@ -40,5 +40,18 @@ public class RomanNumbers {
 			}
 		}
 		return romanNumber;
+	}
+	
+	public static Integer toNumber(String romanNumber) {
+		Integer number = 0;
+		String remainder = romanNumber;
+		for (Entry<String, Integer> entry : romanToNumber.entrySet()) {
+			String key = entry.getKey();
+			while(remainder.startsWith(key)) {
+				remainder = remainder.substring(key.length());
+				number += entry.getValue();
+			}
+		}
+		return number;
 	}
 }

@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.Test;
 
-public class RomanNumbersTest {
+public class RomanToNumberTest {
 
 	@Test
 	public void testToRomanTooHight() {
